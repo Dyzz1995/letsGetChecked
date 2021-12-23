@@ -11,7 +11,11 @@ import { MainLayoutComponent } from './shared/ui/patterns/main-layout/main-layou
 import { SidebarComponent } from './shared/ui/patterns/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClientJsonpModule,
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 import { TooltipComponent } from './shared/ui/elements/tooltip/tooltip.component';
 import { TooltipDirective } from './shared/ui/elements/tooltip/tooltip.directive';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -22,6 +26,7 @@ import { CommentsModule } from './pages/comments/comments.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/posts/post/form/form.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NetworkInterceptor } from './core/interceptors/network.interceptor';
 
 @NgModule({
   declarations: [
@@ -57,7 +62,13 @@ import { ToastrModule } from 'ngx-toastr';
       preventDuplicates: true,
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: NetworkInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
