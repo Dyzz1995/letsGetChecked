@@ -1,0 +1,18 @@
+@use "../abstracts/colors" as c;
+@use "../abstracts/spacing" as s;
+
+:root {
+  @each $color, $shades in c.$colors {
+    @each $shade, $value in $shades {
+      --color-#{"" + $color}-#{$shade}: #{$value};
+    }
+  }
+
+  @each $name, $value in c.$gradient {
+    --gradient-#{$name}: #{$value};
+  }
+
+  @each $name, $value in s.$spacing {
+    --spacing-#{$name}: #{$value}rem;
+  }
+}

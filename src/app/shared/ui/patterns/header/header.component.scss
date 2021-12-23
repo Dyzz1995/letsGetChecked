@@ -1,0 +1,32 @@
+:host {
+  z-index: 30;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.header {
+  background-color: var(--color-primary-500);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-item {
+    padding: var(--spacing-m);
+    display: flex;
+    align-items: center;
+
+    > span {
+      padding-right: var(--spacing-m);
+      color: var(--color-white-500);
+      font-weight: bold;
+      font-size: 25px;
+    }
+
+    &-image {
+      height: 3rem;
+    }
+  }
+}

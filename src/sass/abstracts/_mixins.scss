@@ -1,0 +1,103 @@
+@use "breakpoints" as b;
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+/// Media Query
+/// TODO: Add default value or this will break if $breakpoint doesnt exist in the map
+@mixin mq($breakpoint) {
+  $size: map-get(b.$breakpoints, $breakpoint);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+// body {
+//   font-size: 1rem;
+//   @include mq(small) {
+//     font-size: 2rem;
+//   }
+// }
+
+/// Pseudo element
+@mixin pseudo(
+  $loc: before,
+  $content: "",
+  $pos: absolute,
+  $top: 0,
+  $right: 0,
+  $bottom: 0,
+  $left: 0
+) {
+  position: relative;
+
+  &::#{$loc} {
+    position: $pos;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    content: $content;
+    @content;
+  }
+}
+
+// @include pseudo($loc: after) {
+//   box-shadow: 0 0 1.25em 0 rgba(black, 0.4);
+// }
+// @include pseudo($top: 50%) {
+//   box-shadow: 0 0 1.25em 0 rgba(black, 0.4);
+// }
+
+// Scrollbar
+@mixin scrollbar($max-height) {
+  max-height: $max-height;
+  overflow-y: auto;
+
+  // firefox
+  scrollbar-color: var(--color-primary-500) transparent;
+  scrollbar-width: 4px;
+
+  // webkit browsers
+  // addresses the background of the bar itself. It is usually covered by the other elements
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  // addresses the draggable scrolling element that resizes depending on the size of the scrollable
+  // element
+  &::-webkit-scrollbar-thumb {
+    border: 4px solid rgb(0 0 0 / 0%);
+    background-clip: padding-box;
+    background-color: var(--color-primary-500);
+    border-radius: 9999px;
+  }
+}

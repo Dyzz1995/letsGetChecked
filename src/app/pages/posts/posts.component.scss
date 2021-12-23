@@ -1,0 +1,111 @@
+.posts {
+  list-style: none;
+  padding: 0px;
+
+  &-item {
+    border-radius: 15px;
+    border: 2px solid var(--color-secondary-500-a20);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 1px 7px 4px rgb(0 0 0 / 25%);
+
+    &-wrapper {
+      display: grid;
+      grid-row-gap: 1rem;
+
+      padding: var(--spacing-s);
+
+      &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.7;
+        }
+        &-arrow {
+          font-size: 45px;
+          padding-right: 1rem;
+        }
+        &-item {
+          display: flex;
+          align-items: center;
+          > span {
+            padding-left: var(--spacing-s);
+          }
+
+          > mat-icon {
+            color: var(--color-primary-500);
+          }
+        }
+      }
+
+      &-content {
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+
+        &-title {
+          display: flex;
+          align-items: center;
+          padding-top: var(--spacing-m);
+          padding-bottom: var(--spacing-m);
+          font-weight: bold;
+          font-size: 25px;
+          > span {
+            color: var(--color-secondary-500);
+            padding-left: var(--spacing-m);
+          }
+        }
+        &-expanded {
+          grid-column: span 3;
+        }
+        &-column {
+          &:not(:last-child) {
+            border-right: 2px solid var(--color-primary-500);
+          }
+          &-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            &-wrapper {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+
+      &-footer {
+        margin-top: var(--spacing-l);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        grid-column: span 3;
+      }
+    }
+  }
+}
+
+.details-icons {
+  color: var(--color-secondary-500);
+}
+
+.title {
+  color: var(--color-secondary-500);
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.title-div {
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-l);
+}
+
+.number-comments {
+  color: var(--color-secondary-500);
+
+  &:active {
+    color: var(--color-primary-500);
+  }
+}

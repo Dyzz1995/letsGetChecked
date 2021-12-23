@@ -1,0 +1,32 @@
+@font-face {
+  font-family: Gilroy;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal; // 400
+  src: url("/assets/fonts/gilroy-regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: bold; // 700
+  src: url("/assets/fonts/gilroy-bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Gilroy;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 900;
+  src: url("/assets/fonts/gilroy-extra-bold.otf") format("opentype");
+}
+
+/// Regular font family
+/// @type List
+$text-font-stack: gilroy, system-ui, -apple-system, "Segoe UI", roboto,
+  helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji" !default;
+
+body {
+  font-family: $text-font-stack !important;
+}

@@ -1,0 +1,23 @@
+.form-item {
+  display: flex;
+  align-items: center;
+  padding-top: var(--spacing-m);
+
+  .label {
+    width: 20%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-secondary-500);
+  }
+}
+.button-wrapper {
+  padding-top: var(--spacing-xl);
+  display: flex;
+  justify-content: end;
+}
+
+.validation-error-msg {
+  color: var(--color-red-500);
+  font-size: 15px;
+  font-weight: bold;
+}

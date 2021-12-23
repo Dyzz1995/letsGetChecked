@@ -1,0 +1,14 @@
+.module-border-wrap {
+  max-width: 100%;
+  position: relative;
+  background: var(--gradient-primary);
+  padding: 4px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.module {
+  background: var(--color-white-500);
+  border-radius: 10px;
+  color: var(--color-secondary-500);
+}

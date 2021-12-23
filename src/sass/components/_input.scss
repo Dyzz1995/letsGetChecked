@@ -1,0 +1,35 @@
+.input {
+  width: 50%;
+  height: 2rem;
+  border-radius: 15px;
+  font-size: 15px;
+  background-color: var(--color-white-500);
+  padding-left: var(--spacing-s);
+  border: 2px solid var(--color-secondary-500);
+  box-shadow: 2px 4px 4px rgb(0 0 0 / 25%);
+  font-weight: bold;
+  color: var(--color-secondary-500);
+
+  &::placeholder {
+    color: var(--color-secondary-500);
+    font-size: 20px;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &-textarea {
+    padding: var(--spacing-m);
+    font-size: 15px;
+  }
+
+  &.ng-invalid.ng-touched,
+  &.ng-invalid.ng-dirty {
+    border: var(--color-red-500) 2px solid !important;
+  }
+}

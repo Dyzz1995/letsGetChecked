@@ -1,0 +1,104 @@
+.details-icons {
+  color: var(--color-secondary-500);
+  font-size: 3rem;
+  height: 100%;
+}
+.subdetails-icons {
+  color: var(--color-grey-500);
+  font-size: 2rem;
+}
+
+.title {
+  padding-left: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-secondary-500);
+}
+.color {
+  color: var(--color-secondary-500);
+}
+.header {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+.comments {
+  display: flex;
+  align-items: center;
+  color: var(--color-secondary-500);
+  &-title {
+    color: var(--color-secondary-500);
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding-left: var(--spacing-s);
+  }
+  &-list {
+    display: grid;
+    grid-row-gap: 2rem;
+  }
+}
+.comment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-s);
+
+  &--author {
+    display: flex;
+    align-items: center;
+
+    > span {
+      padding-left: var(--spacing-s);
+    }
+  }
+  &--date {
+    display: flex;
+    align-items: center;
+
+    > span {
+      padding-left: var(--spacing-s);
+      padding-right: var(--spacing-s);
+    }
+  }
+}
+.comment-content {
+  display: flex;
+  padding-left: var(--spacing-m);
+  padding-top: var(--spacing-s);
+}
+.content {
+  font-size: 1rem;
+  padding-top: var(--spacing-xl);
+  &-title {
+    padding-bottom: var(--spacing-m);
+    padding-top: var(--spacing-m);
+    color: var(--color-secondary-500);
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  &-detail {
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--spacing-m);
+    color: var(--color-secondary-500);
+
+    :not(:first-child) {
+      padding-top: var(--spacing-m);
+    }
+
+    > span {
+      padding-left: var(--spacing-m);
+      padding-top: var(--spacing-s);
+      color: var(--color-secondary-500);
+    }
+  }
+}
+.padding {
+  padding-top: var(--spacing-m);
+  color: var(--color-secondary-500);
+}
+.add-comment {
+  padding-top: var(--spacing-xl);
+  display: flex;
+  justify-content: flex-end;
+}

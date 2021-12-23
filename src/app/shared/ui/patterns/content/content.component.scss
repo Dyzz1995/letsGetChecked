@@ -1,0 +1,13 @@
+:host {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.content {
+  // content height = 100vh (full page) - 100px (header height)
+  height: calc(100vh - 140px);
+  padding: var(--spacing-m);
+  padding-bottom: var(--spacing-l);
+  overflow-y: auto;
+  background-color: var(--color-white-500);
+}

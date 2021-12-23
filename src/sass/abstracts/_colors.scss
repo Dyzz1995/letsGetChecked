@@ -1,0 +1,25 @@
+$colors: (
+  primary: (
+    500: #007990,
+    500-a20: #00b2c2,
+  ),
+  secondary: (
+    500: #193252,
+    500-a20: #12243b,
+    500-a50: #4f4eb32b,
+  ),
+  red: (
+    500: #a34f17,
+  ),
+  white: (
+    500: #eeeceb,
+  ),
+  grey: (
+    500: #adaaa8,
+  ),
+);
+
+$gradient: (
+  primary: linear-gradient(#007990, #193252),
+  primary-light: linear-gradient(96.01deg, #3d80cc -34.64%, #007990 99.63%),
+);

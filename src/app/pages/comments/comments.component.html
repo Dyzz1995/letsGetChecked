@@ -1,0 +1,57 @@
+<ng-container>
+  <div class="title-div">
+    <span class="title">All Comments</span>
+  </div>
+  <ul class="comments">
+    <li class="comments-item" *ngFor="let comment of comments">
+      <div class="comments-item-wrapper">
+        <div class="comments-item-wrapper-content">
+          <div class="comments-item-wrapper--item">
+            <button
+              class="button-icon"
+              [routerLink]="[
+                '/',
+                'posts',
+                comment.postId,
+                'edit',
+                'comment',
+                comment.id
+              ]"
+              [queryParams]="{ fromCommentsPage: true }"
+            >
+              <mat-icon> border_color</mat-icon>
+            </button>
+            <mat-icon [appTooltip]="authorTooltip" class="details-icons">
+              person_pin</mat-icon
+            >
+            <span>{{ comment.user }}</span>
+          </div>
+          <div class="comments-item-wrapper--item">
+            <mat-icon [appTooltip]="publishDateTooltip" class="details-icons">
+              date_range</mat-icon
+            >
+            <span>{{ comment.date }}</span>
+          </div>
+        </div>
+        <div class="comments-item-wrapper-content">
+          <span
+            ><b>{{ comment.content }}</b></span
+          >
+          <button class="button" [routerLink]="['/', 'posts', comment.postId]">
+            See post
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <ng-template #authorTooltip>
+    <span>User</span>
+  </ng-template>
+  <ng-template #publishDateTooltip>
+    <span>Comment date</span>
+  </ng-template>
+  <ng-template #descriptionTooltip>
+    <span>Description</span>
+  </ng-template>
+</ng-container>

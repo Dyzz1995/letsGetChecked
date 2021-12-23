@@ -1,0 +1,22 @@
+<ng-container>
+  <nav class="nav">
+    <div class="nav-wrapper">
+      <ul class="nav-list">
+        <li class="nav-list__item">
+          <a [routerLink]="['/posts']" routerLinkActive="active">
+            <mat-icon aria-hidden="false">local_post_office</mat-icon>
+
+            <span>Posts</span>
+          </a>
+        </li>
+        <li class="nav-list__item">
+          <a [routerLink]="['/comments']" routerLinkActive="active">
+            <mat-icon aria-hidden="false">comment_bank</mat-icon>
+
+            <span>Comments</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</ng-container>

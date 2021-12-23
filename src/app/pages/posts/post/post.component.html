@@ -1,0 +1,89 @@
+<ng-container>
+  <div class="header">
+    <mat-icon class="details-icons">info</mat-icon>
+    <span class="title">{{ post.title }}</span>
+  </div>
+  <div class="content">
+    <div class="content-detail">
+      <mat-icon class="subdetails-icons"> person_pin</mat-icon>
+      <span
+        >written by <b>{{ post.author }}</b></span
+      >
+    </div>
+    <div class="content-detail">
+      <mat-icon class="subdetails-icons">date_range</mat-icon>
+      <span
+        >Published on <b>{{ post.publish_date }}</b></span
+      >
+    </div>
+    <div class="content-detail">
+      <mat-icon class="subdetails-icons" [appTooltip]="descriptionTooltip"
+        >description</mat-icon
+      >
+      <span
+        ><b>{{ post.description }}</b></span
+      >
+    </div>
+  </div>
+  <div class="content">
+    <span class="content-title">Post content</span>
+    <div class="padding" [innerHtml]="post.content"></div>
+  </div>
+  <div class="content comments">
+    <mat-icon>comment</mat-icon>
+    <span class="comments-title">Comments</span>
+  </div>
+
+  <div class="content comments comments-list">
+    <ng-container *ngFor="let comment of post.comments">
+      <div class="module-border-wrap">
+        <div class="module">
+          <div class="comment-header">
+            <div class="comment-header--author">
+              <button
+                class="button-icon"
+                [routerLink]="[
+                  '/',
+                  'posts',
+                  post.id,
+                  'edit',
+                  'comment',
+                  comment.id
+                ]"
+              >
+                <mat-icon> border_color</mat-icon>
+              </button>
+              <mat-icon> person_pin</mat-icon>
+              <span>{{ comment.user }}</span>
+            </div>
+            <div class="comment-header--date">
+              <mat-icon>date_range</mat-icon>
+              <span>{{ comment.date }}</span>
+            </div>
+          </div>
+          <div class="comment-content">
+            <p>
+              <b>{{ comment.content }}</b>
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="post.comments?.length === 0">
+      <span class="color">There is no comments on this post</span>
+    </ng-container>
+  </div>
+
+  <div class="add-comment">
+    <button
+      class="button add-button"
+      [routerLink]="['/', 'posts', post.id, 'new', 'comment']"
+    >
+      Add comment
+    </button>
+  </div>
+
+  <ng-template #descriptionTooltip>
+    <span>Description</span>
+  </ng-template>
+</ng-container>

@@ -1,0 +1,7 @@
+.grid-wrapper {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 223px auto;
+  grid-template-rows: 100px auto;
+  background-color: var(--color-white-500);
+}

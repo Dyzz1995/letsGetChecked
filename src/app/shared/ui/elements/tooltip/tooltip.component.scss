@@ -1,0 +1,43 @@
+$border-color: transparent;
+$tooltip-body-color: var(--color-grey-500);
+$tooltip-arrow-width: 10px;
+
+.container {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  margin-top: 0.7rem;
+  min-width: 50px;
+  max-width: 400px;
+  background: $tooltip-body-color;
+  border: 1px solid $border-color;
+  border-radius: 15px;
+  pointer-events: none;
+  position: relative;
+  min-height: 1rem;
+  padding: 1rem;
+  color: var(--color-white-500);
+  font-weight: bold;
+  font-size: 15px;
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  &:after {
+    left: 40%;
+    border-color: transparent transparent $tooltip-body-color transparent;
+    border-width: $tooltip-arrow-width;
+  }
+
+  &:before {
+    left: calc(49%);
+    border-color: transparent transparent $border-color transparent;
+    border-width: $tooltip-arrow-width + 2px;
+  }
+}
